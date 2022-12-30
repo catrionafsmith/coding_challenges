@@ -31,15 +31,19 @@ def duplicate_count(text):
 
 def duplicate_count(text):
     repeated_letter = ""
+    text = text.lower()
     count = 0
     for i in range(len(text)):
-        if text.count(text[i].lower()) > 1 and not text[i].lower() in repeated_letter:
+        if text.count(text[i]) > 1 and not text[i] in repeated_letter:
             count += 1
-            repeated_letter += text[i].lower()
+            repeated_letter += text[i]
         else:
-            repeated_letter += text[i].lower()
-    print(count)
-    print(repeated_letter)
+            repeated_letter += text[i]
     return count
 
 (duplicate_count("abcdeaB"))
+
+# Best codewar solution:
+def duplicate_count(s):
+  return len([c for c in set(s.lower()) if s.lower().count(c)>1])
+     
