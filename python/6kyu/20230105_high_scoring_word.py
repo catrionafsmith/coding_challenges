@@ -45,3 +45,4 @@ def high(x):
 
 # New learning: ord()
 # The ord() function returns the number representing the unicode code of a specified character.
+# e.g. print(ord("a")) = 97
