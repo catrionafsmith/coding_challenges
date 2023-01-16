@@ -55,13 +55,14 @@ def max_sequence(arr):
     max_tot = 0
     k = 0 
     for i in range(len(arr)):
-        sum_num = 0
-        for num in arr[k:]:
-            sum_num += num
-            print(sum_num)
-            if sum_num > max_tot:
-                max_tot = sum_num 
-        k += 1
+        l = min(arr)
+        k = min(arr[:l])
+        m = min(arr[l:])
+        sum_num = sum(arr[l:])
+        print(sum_num)
+        if sum_num > max_tot:
+            max_tot = sum_num 
+        # k += 1
 
     print(f"This is max {max_tot}")
     return max_tot
