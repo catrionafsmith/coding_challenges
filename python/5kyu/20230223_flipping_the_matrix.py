@@ -1,3 +1,4 @@
+def flippingthematrix():
     m_len = len(matrix)
     n = int(m_len / 2)
     f_matrix = []
@@ -35,4 +36,4 @@
     return sum_n_n
 
 
-flippingMatrix(matrix)
+# flippingMatrix(matrix)
