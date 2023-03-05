@@ -11,7 +11,7 @@ def truckTour(petrolpumps):
     sum_ele1 = 0
     sum_ele2 = 0
     i = 0
-    while i <
+    while i < j:
         for j in range (len(petrolpumps)):
             sum_ele1 += petrolpumps[i][0]
             sum_ele2 += petrolpumps[i][1]
