@@ -60,7 +60,7 @@ sentences = ['aab', 'aba', 'Abcdefghijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuv
 # print(check_allchars(sentences))
 
 # Group Transactions
-def shopping_list(transactions):
+# def shopping_list(transactions):
     # for each item in the list I need to note its frequency/count
     #  I need to order the items in descending order of frequency
     #  and alphabetically for items that have the same frequency
@@ -69,21 +69,72 @@ def shopping_list(transactions):
     # To get the frequency i could use count()
     # Or I could have a counter
     # I could put the items into separate arrays based on their count, alphabetically sort them, then put them into another array
-    trans_dict = {}
-    counted = []
-    for item in transactions:
-        if item not in counted:
-            trans_dict[f"{item} {transactions.count(item)}"] = transactions.count(item)
-            counted.append(item)
-    print(trans_dict)
-    n_trans_dict = (sorted(trans_dict))
-    print(n_trans_dict)
-    sort_trans = sorted(n_trans_dict.items(), key=lambda x: x[1], reverse=True)
-    print(sort_trans)
-    for i in sort_trans:
-        print(i[0])
+    # trans_dict = {}
+    # counted = []
+    # for item in transactions:
+    #     if item not in counted:
+    #         trans_dict[f"{item} {transactions.count(item)}"] = transactions.count(item)
+    #         counted.append(item)
+    # print(trans_dict)
+    # n_trans_dict = (sorted(trans_dict))
+    # print(n_trans_dict)
+    # sort_trans = sorted(n_trans_dict.items(), key=lambda x: x[1], reverse=True)
+    # print(sort_trans)
+    # for i in sort_trans:
+    #     print(i[0])
     # print(sorted(trans_lists, reverse = True))
 
 
-transactions = ("bin", "bin", "bin", "potato", "potato", "apple", "apple", "cheese","apple")
-shopping_list(transactions)
+# transactions = ("bin", "bin", "bin", "potato", "potato", "apple", "apple", "cheese","apple")
+# shopping_list(transactions)
+
+def dec_to_bin(num):
+    rem = 0
+    rev_bin = ""
+    while num > 0:
+        rem = num % 2 
+        num = num //2
+        rev_bin += str(rem)
+    bin = rev_bin[::-1]
+    return bin[-4]
+
+num = 23
+# print(dec_to_bin(23))
+
+
+# def no_same_let(words):
+#     return_array = []
+#     for j in range(len(words)):
+#         same_let = 1
+#         for i in range(len(words[j])-1):
+#             if words[j][i+1] == words[j][i]:
+#                 same_let += 1
+#         return_array.append(same_let//2)
+#     return return_array
+
+def no_same_let(words):
+    return_array = []
+    for word in words:
+        same_let = 1
+        for i in range(len(word)-1):
+            if word[i+1] == word[i]:
+                same_let += 1
+        return_array.append(same_let//2)
+    return return_array
+
+words = ["boom", "boook", "no"]
+print(no_same_let(words))
+
+def all_char(string_list):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    return_array2 = []
+    for word in string_list:
+        word2 = word.replace(" ", "")
+        if set(word2) == set(alphabet):
+            return_array2.append(1)
+        else:
+            return_array2.append(0)
+    return return_array2
+
+sentences = ['aab', 'aba', ' abcdefghijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuvwxyz','the quick brown fox jumps over the next lazy dog']
+print(all_char(sentences))
